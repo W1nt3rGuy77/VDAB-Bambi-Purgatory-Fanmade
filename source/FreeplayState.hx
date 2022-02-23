@@ -160,14 +160,10 @@ class FreeplayState extends MusicBeatState
 					addWeek(['Shattered'], 6, ['bambiMad']);
 					addWeek(['Supplanted'], 7, ['bambiRage']);
 					addWeek(['Reality-Breaking'], 11, ['bambiGod2d']);
-					addWeek(['Rebound'], 11, ['bambiGod']);
 					addWeek(['Disposition'], 11, ['bambiGod']);
-					addWeek(['Upheaval'], 10, ['bambiHell']);
 					addWeek(['Beefin'], 12, ['bamburg']);
 					addWeek(['Technology'], 9, ['bombu']);
 					addWeek(['Devastation'], 12, ['devastation']);
-					addWeek(['Acquaintance'], 13, ['poip']);
-					addWeek(['Antagonism'], 10, ['dataexpunged']);
 					#if !debug
 					if(FlxG.save.data.oppositionFound)
 					#end

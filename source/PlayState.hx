@@ -2291,7 +2291,7 @@ class PlayState extends MusicBeatState
 					}
 					if (dad2 != null)
 					{
-						if (dad2.animation.curAnim.name != null && !dad2.animation.curAnim.name.startsWith("sing") && !dad2.stunned)
+						if (dad2.animation.curAnim != null && !dad2.animation.curAnim.name.startsWith("sing") && !dad2.stunned)
 						{
 							dad2.dance();
 						}
@@ -3447,15 +3447,15 @@ class PlayState extends MusicBeatState
 		super.update(elapsed);
 
 		if(ratingName == '?') {
-			scoreTxt.text = 'NPS: ' + nps + ' | Score: ' + songScore + ' | Tape Screams: ' + songMisses + ' | Accuracy: 0% | N/A';
+			scoreTxt.text = 'NPS: ' + nps + ' | Score: ' + songScore + ' | Misses: ' + songMisses + ' | Accuracy: 0% | N/A';
 		} else {
-			scoreTxt.text = 'NPS: ' + nps + ' | Score: ' + songScore + ' | Tape Screams: ' + songMisses + ' | Accuracy: ' + Math.floor(ratingPercent * 100) + '% | ' + ratingFC;
+			scoreTxt.text = 'NPS: ' + nps + ' | Score: ' + songScore + ' | Misses: ' + songMisses + ' | Accuracy: ' + Math.floor(ratingPercent * 100) + '% | ' + ratingFC;
 		}
 		if(cpuControlled) {
 			scoreTxt.text = 'Cheater! | BotPlay ';
 		}
 		if(practiceMode) {
-			scoreTxt.text = 'NPS: ' + nps + ' | Tape Screams: ' + songMisses + ' | Practice Mode ';
+			scoreTxt.text = 'NPS: ' + nps + ' | Misses: ' + songMisses + ' | Practice Mode ';
 		}
 
 		if(cpuControlled) {
@@ -3941,7 +3941,7 @@ class PlayState extends MusicBeatState
 							    		camHUD.shake(0.0065, 0.1);
 								     	if(health > 0.05) health -= 0.01;
 									case 'devastation':
-										if(health > 0.2 && curStep > 1280 && curStep < 3232) health -= 0.03;
+										if(health > 0.2 && curStep > 1280 && curStep < 3232) health -= 0.1;
 								     	if(health > 0.1 && curStep > 3232) health -= 0.01;
 									}
 									switch(dad.curCharacter)
@@ -3958,7 +3958,7 @@ class PlayState extends MusicBeatState
 						}
 						if(daNote.noteType == 'Dad2') {
 							dad2.playAnim(animToPlay + altAnim, true);
-							dad.holdTimer = 0;
+							dad2.holdTimer = 0;
 						}
 						if(daNote.noteType == 'Dad3') {
 							dad2.playAnim(animToPlay + altAnim, true);

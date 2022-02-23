@@ -343,24 +343,13 @@ class StoryMenuState extends MusicBeatState
 		curDifficulty += change;
 
 		if (curDifficulty < 0)
-			curDifficulty = CoolUtil.difficultyStuff.length-1;
-		if (curDifficulty >= CoolUtil.difficultyStuff.length)
-			curDifficulty = 0;
-		else
-		{
-			if (curDifficulty < 0)
-				curDifficulty = 2;
-			if (curDifficulty > 2)
-				curDifficulty = 0;
-		}
-		if (curWeek == 3)
-		{
-			curDifficulty = 3;
-		}
-		if (curWeek == 4 || curWeek == 5 || curWeek == 6 || curWeek == 7 || curWeek == 8)
-		{
 			curDifficulty = 2;
-		}
+		if (curDifficulty > 2)
+			curDifficulty = 0;
+		if (curWeek == 3)
+			curDifficulty = 3;
+		if (curWeek >= 4)
+			curDifficulty = 2;
 
 		sprDifficultyGroup.forEach(function(spr:FlxSprite) {
 			spr.visible = false;
