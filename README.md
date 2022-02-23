@@ -47,5 +47,3 @@ this is tristan
 say hi
 
 hi tridan
-
-"# VDAB-Bambi-Purgatory-Fanmade" 

@@ -1,0 +1,56 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-100,
+				-200
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Bamburg idle"
+		},
+		{
+			"offsets": [
+				-100,
+				-140
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Bamburg up"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-200,
+				-210
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "Bamburg right",
+			"indices": []
+		}
+	],
+	"no_antialiasing": true,
+	"image": "characters/Bamburg",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "bamburg",
+	"flip_x": false,
+	"healthbar_colors": [
+		220,
+		160,
+		0
+	],
+	"camera_position": [
+		-400,
+		5
+	],
+	"sing_duration": 6.1,
+	"scale": 5
+}
