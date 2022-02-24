@@ -1782,8 +1782,6 @@ class PlayState extends MusicBeatState
 		{
 			case 'supernovae':
 				credits = 'Original Song made by ArchWk!';
-			case 'reality-breaking' | 'technology':
-				credits = 'Note: This song is VERY unfinished.';
 			case 'glitch':
 				credits = 'Original Song made by DeadShadow and PixelGH!';
 			case 'mealie':
@@ -2954,22 +2952,42 @@ class PlayState extends MusicBeatState
 					spr.y -= Math.sin(elapsedtime) * 1.3;
 				});
 			}
-	if (SONG.song.toLowerCase() == 'devastation' && curStep > 3232) // oh shit
+	if (SONG.song.toLowerCase() == 'devastation') // oh shit
 		{
+			if (curStep > 1280 && curStep < 3232)
+			{
+				playerStrums.forEach(function(spr:FlxSprite)
+					{
+						spr.y += Math.sin(elapsedtime) * ((spr.ID % 0.2) == 0 ? 0.005 : -0.005);
+						spr.y -= Math.sin(elapsedtime) * 0.05;
+						spr.x -= Math.sin(elapsedtime) * ((spr.ID % 0.1) == 0 ? 0 : -0);
+						spr.x += Math.sin(elapsedtime) * 0.1;
+					});
+				opponentStrums.forEach(function(spr:FlxSprite)
+				{
+					spr.y -= Math.sin(elapsedtime) * ((spr.ID % 0.2) == 0 ? 0.005 : -0.005);
+					spr.y += Math.sin(elapsedtime) * 0.05;
+					spr.x -= Math.sin(elapsedtime) * ((spr.ID % 0.1) == 0 ? 0 : -0);
+					spr.x += Math.sin(elapsedtime) * 0.1;
+				});
+			}
+			if (curStep > 3232)
+			{
 			playerStrums.forEach(function(spr:FlxSprite)
-			{
-				spr.x = ((FlxG.width / 12) - (spr.width / 7)) + (Math.sin(elapsedtime + (spr.ID)) * 500);
-				spr.x += 500; 
-				spr.y += Math.sin(elapsedtime) * Math.random();
-				spr.y -= Math.sin(elapsedtime) * 1.3;
-			});
-			opponentStrums.forEach(function(spr:FlxSprite)
-			{
-				spr.x = ((FlxG.width / 12) - (spr.width / 7)) + (Math.sin((elapsedtime + (spr.ID )) * 2) * 500);
-				spr.x += 500; 
-				spr.y += Math.sin(elapsedtime) * Math.random();
-				spr.y -= Math.sin(elapsedtime) * 1.3;
-			});
+				{
+					spr.x = ((FlxG.width / 12) - (spr.width / 7)) + (Math.sin(elapsedtime + (spr.ID)) * 500);
+					spr.x += 500; 
+					spr.y += Math.sin(elapsedtime) * Math.random();
+					spr.y -= Math.sin(elapsedtime) * 1.3;
+				});
+				opponentStrums.forEach(function(spr:FlxSprite)
+				{
+					spr.x = ((FlxG.width / 12) - (spr.width / 7)) + (Math.sin((elapsedtime + (spr.ID )) * 2) * 500);
+					spr.x += 500; 
+					spr.y += Math.sin(elapsedtime) * Math.random();
+					spr.y -= Math.sin(elapsedtime) * 1.3;
+				});
+			}
 		}
 	if (SONG.song.toLowerCase() == 'furiosity') // is cool, ratio
 			{
@@ -3266,7 +3284,7 @@ class PlayState extends MusicBeatState
 		case 'technology':
 			switch (curStep)
 			{
-				case 794:
+				case 1024:
 				if(ClientPrefs.flashing) FlxG.camera.flash(FlxColor.WHITE, 1);
 				//purpleGlow,visible = true;
 			}
@@ -3940,9 +3958,6 @@ class PlayState extends MusicBeatState
 									case 'disposition':
 							    		camHUD.shake(0.0065, 0.1);
 								     	if(health > 0.05) health -= 0.01;
-									case 'devastation':
-										if(health > 0.2 && curStep > 1280 && curStep < 3232) health -= 0.1;
-								     	if(health > 0.1 && curStep > 3232) health -= 0.01;
 									}
 									switch(dad.curCharacter)
 									{
@@ -3981,6 +3996,9 @@ class PlayState extends MusicBeatState
 							if(gf.animOffsets.exists('scared')) {
 								gf.playAnim('scared', true);
 							}
+						case 'devastation':
+							if(health > 0.1 && curStep > 1280) health -= 0.01;
+							if(curStep > 3232) camHUD.shake(0.0065, 0.1);
 					   	}
 
 					    switch (SONG.song.toLowerCase())
@@ -5386,12 +5404,12 @@ class PlayState extends MusicBeatState
 
 			if (!note.isSustainNote)
 				{
+					combo += 1;
 					popUpScore(note);
 					if(ClientPrefs.hitsounds)
 					{
 						FlxG.sound.play(Paths.sound('note_click', 'shared'));
 					}
-					combo += 1;
 					if(combo > 9999) combo = 9999;
 				}
 			health += note.hitHealth;
@@ -5797,7 +5815,7 @@ class PlayState extends MusicBeatState
 						startCharacterPos(dad2, true);
 						add(dad2);
 					case 1280: //note to self: 1280
-						FlxG.camera.flash(FlxColor.WHITE, 0.5);
+						if(ClientPrefs.flashing) FlxG.camera.flash(FlxColor.WHITE, 0.5);
 						remove(dad2);
 						devaBurger.visible = false;
 						devaLaptop.active = true;
@@ -5808,7 +5826,7 @@ class PlayState extends MusicBeatState
 						devaLaptop.visible = false;
 						devaExpunged.active = true;
 						curbg = devaExpunged;
-						FlxG.camera.flash(FlxColor.BLACK, 3);
+						if(ClientPrefs.flashing) FlxG.camera.flash(FlxColor.BLACK, 3);
 				}
 		}
 

@@ -157,7 +157,6 @@ class FreeplayState extends MusicBeatState
 					//addWeek(['Monochrome'], 5, ['bambi3d']);
 					//addWeek(['Defeat'], 5, ['bambiRage']);
 				case 'purgatory':
-					addWeek(['Shattered'], 6, ['bambiMad']);
 					addWeek(['Supplanted'], 7, ['bambiRage']);
 					addWeek(['Reality-Breaking'], 11, ['bambiGod2d']);
 					addWeek(['Disposition'], 11, ['bambiGod']);
