@@ -37,7 +37,7 @@
 	"no_antialiasing": true,
 	"image": "characters/Bamburg",
 	"position": [
-		0,
+		-200,
 		0
 	],
 	"healthicon": "bamburg",
@@ -48,9 +48,9 @@
 		0
 	],
 	"camera_position": [
-		-400,
+		-310,
 		5
 	],
 	"sing_duration": 6.1,
-	"scale": 5
+	"scale": 2
 }

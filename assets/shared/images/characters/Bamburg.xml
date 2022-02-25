@@ -1,18 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TextureAtlas imagePath="Bamburg.png"><SubTexture name="Bamburg idle0000" x="270" y="0" width="102" height="107" frameX="-63" frameY="-17" frameWidth="185" frameHeight="139" />
-<SubTexture name="Bamburg idle0001" x="270" y="107" width="100" height="107" frameX="-62" frameY="-16" frameWidth="185" frameHeight="139" />
-<SubTexture name="Bamburg idle0002" x="77" y="138" width="94" height="109" frameX="-62" frameY="-14" frameWidth="185" frameHeight="139" />
-<SubTexture name="Bamburg idle0003" x="171" y="138" width="83" height="109" frameX="-63" frameY="-12" frameWidth="185" frameHeight="139" />
-<SubTexture name="Bamburg idle0004" x="0" y="138" width="77" height="110" frameX="-60" frameY="-11" frameWidth="185" frameHeight="139" />
-<SubTexture name="Bamburg idle0005" x="0" y="138" width="77" height="110" frameX="-60" frameY="-11" frameWidth="185" frameHeight="139" />
-<SubTexture name="Bamburg right0000" x="235" y="248" width="129" height="103" frameX="-36" frameY="-16" frameWidth="185" frameHeight="139" />
-<SubTexture name="Bamburg right0001" x="372" y="0" width="125" height="103" frameX="-37" frameY="-16" frameWidth="185" frameHeight="139" />
-<SubTexture name="Bamburg right0002" x="113" y="248" width="122" height="104" frameX="-39" frameY="-16" frameWidth="185" frameHeight="139" />
-<SubTexture name="Bamburg right0003" x="0" y="248" width="113" height="105" frameX="-42" frameY="-16" frameWidth="185" frameHeight="139" />
-<SubTexture name="Bamburg right0004" x="0" y="248" width="113" height="105" frameX="-42" frameY="-16" frameWidth="185" frameHeight="139" />
-<SubTexture name="Bamburg up0000" x="0" y="0" width="68" height="138" frameX="-59" frameY="-1" frameWidth="185" frameHeight="139" />
-<SubTexture name="Bamburg up0001" x="68" y="0" width="68" height="135" frameX="-59" frameY="-4" frameWidth="185" frameHeight="139" />
-<SubTexture name="Bamburg up0002" x="136" y="0" width="67" height="126" frameX="-59" frameY="-13" frameWidth="185" frameHeight="139" />
-<SubTexture name="Bamburg up0003" x="203" y="0" width="67" height="118" frameX="-59" frameY="-21" frameWidth="185" frameHeight="139" />
-<SubTexture name="Bamburg up0004" x="203" y="0" width="67" height="118" frameX="-59" frameY="-21" frameWidth="185" frameHeight="139" />
+<TextureAtlas imagePath="Bamburg.png"><SubTexture name="Bamburg idle0000" x="0" y="769" width="320" height="333" frameX="-195" frameY="-53" frameWidth="576" frameHeight="432" />
+<SubTexture name="Bamburg idle0001" x="830" y="0" width="310" height="334" frameX="-195" frameY="-49" frameWidth="576" frameHeight="432" />
+<SubTexture name="Bamburg idle0002" x="496" y="428" width="290" height="336" frameX="-195" frameY="-44" frameWidth="576" frameHeight="432" />
+<SubTexture name="Bamburg idle0003" x="238" y="428" width="258" height="339" frameX="-195" frameY="-37" frameWidth="576" frameHeight="432" />
+<SubTexture name="Bamburg idle0004" x="0" y="428" width="238" height="341" frameX="-189" frameY="-34" frameWidth="576" frameHeight="432" />
+<SubTexture name="Bamburg idle0005" x="0" y="428" width="238" height="341" frameX="-189" frameY="-34" frameWidth="576" frameHeight="432" />
+<SubTexture name="Bamburg right0000" x="0" y="1102" width="402" height="318" frameX="-112" frameY="-51" frameWidth="576" frameHeight="432" />
+<SubTexture name="Bamburg right0001" x="1140" y="0" width="389" height="319" frameX="-116" frameY="-51" frameWidth="576" frameHeight="432" />
+<SubTexture name="Bamburg right0002" x="671" y="769" width="377" height="320" frameX="-122" frameY="-51" frameWidth="576" frameHeight="432" />
+<SubTexture name="Bamburg right0003" x="320" y="769" width="351" height="324" frameX="-132" frameY="-51" frameWidth="576" frameHeight="432" />
+<SubTexture name="Bamburg right0004" x="320" y="769" width="351" height="324" frameX="-132" frameY="-51" frameWidth="576" frameHeight="432" />
+<SubTexture name="Bamburg up0000" x="0" y="0" width="208" height="428" frameX="-186" frameY="-4" frameWidth="576" frameHeight="432" />
+<SubTexture name="Bamburg up0001" x="208" y="0" width="208" height="418" frameX="-186" frameY="-13" frameWidth="576" frameHeight="432" />
+<SubTexture name="Bamburg up0002" x="416" y="0" width="207" height="390" frameX="-185" frameY="-41" frameWidth="576" frameHeight="432" />
+<SubTexture name="Bamburg up0003" x="623" y="0" width="207" height="366" frameX="-185" frameY="-65" frameWidth="576" frameHeight="432" />
+<SubTexture name="Bamburg up0004" x="623" y="0" width="207" height="366" frameX="-185" frameY="-65" frameWidth="576" frameHeight="432" />
 </TextureAtlas>
