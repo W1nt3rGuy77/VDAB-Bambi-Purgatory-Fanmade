@@ -140,6 +140,7 @@ class PlayState extends MusicBeatState
 
 	public var dad:Character;
 	public var dad2:Character;
+	public var dad3:Character;
 	//private var dadmirror:Character;
 	public var gf:Character;
 	//private var core:Character;
@@ -158,7 +159,7 @@ class PlayState extends MusicBeatState
 
 	var funnyFloatyBoys:Array<String> = ['dave-3d', 'bambi-3d', 'bambi-unfair', 'expunged', 'bambi-piss-3d', 'bambi-scaryooo', 'bambi-god', 'bambi-god2d', 'bambi-hell', 'bombu'];
 	var funnyBanduFloaty:Array<String> = [];
-	var funnySideFloatyBoys:Array<String> = ['bombu'];
+	var funnySideFloatyBoys:Array<String> = ['bombu', 'badai'];
 	var canSlide:Bool = true;
 
 	public var notes:FlxTypedGroup<Note>;
@@ -904,13 +905,7 @@ class PlayState extends MusicBeatState
 				devaExpunged.scrollFactor.set(0.6, 0.6);
 				devaExpunged.active = false;
 
-				redTunnel = new FlxSprite(-256, -256).loadGraphic(Paths.image('dave/redTunnel'));
-				redTunnel.antialiasing = true;
-				redTunnel.scrollFactor.set(0.6, 0.6);
-				redTunnel.active = true;
-
 				add(devaExpunged);
-				add(redTunnel);
 				add(devaLaptop);
 				add(devaBurger);
 				#if windows
@@ -1803,7 +1798,7 @@ class PlayState extends MusicBeatState
 			case 'secret':
 				credits = 'you are shit';
 			case 'devastation':
-				credits = 'Song made by Hortas and EpicRandomness11!';
+				credits = 'Song made by Hortas, Pyramix and ShredBoi!';
 			case 'DATA_EXPUNGED_(HAXELIB_ERROR)':
 				credits = "????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????"; 
 			default:
@@ -2852,6 +2847,13 @@ class PlayState extends MusicBeatState
 	override public function update(elapsed:Float)
 	{
 	elapsedtime += elapsed;
+	if(redTunnel != null)
+	{
+		redTunnel.angle += elapsed * 3.5;
+		var theScale = 0.01 * (1 - redTunnel.scale.x) + redTunnel.scale.x; //the += thing not work
+		redTunnel.scale.set(theScale, theScale);
+		redTunnel.updateHitbox();
+	}
 	#if windows
 	if (curbg != null)
 	{
@@ -4391,7 +4393,28 @@ class PlayState extends MusicBeatState
 
 			case 'Kill Henchmen':
 				killHenchmen();
-
+			case 'Spawn RedTunnel':
+				spawnRedTunnel();
+			case 'Spawn Alt Character':
+				switch(value1)
+				{
+					case 'Dad2':
+						dad2 = new Character(-250, 0, value2);
+						startCharacterPos(dad2, true);
+						add(dad2);
+					case 'Dad3':
+						dad3 = new Character(-250, 0, value2);
+						startCharacterPos(dad3, true);
+						add(dad3);
+				}
+			case 'Remove Alt Character':
+				switch(value1)
+				{
+					case 'Dad2':
+						remove(dad2);
+					case 'Dad3':
+						remove(dad3);
+				}
 			case 'Add Camera Zoom':
 				if(ClientPrefs.camZooms && FlxG.camera.zoom < 1.35) {
 					var camZoom:Float = Std.parseFloat(value1);
@@ -5715,6 +5738,23 @@ class PlayState extends MusicBeatState
 		}
 	}
 
+	function spawnRedTunnel()
+	{
+		var position:Int = members.indexOf(gfGroup);
+		if(members.indexOf(boyfriendGroup) < position) {
+			position = members.indexOf(boyfriendGroup);
+		} else if(members.indexOf(dadGroup) < position) {
+			position = members.indexOf(dadGroup);
+		}
+		redTunnel = new FlxSprite(-256, -256).loadGraphic(Paths.image('dave/redTunnel'));
+		redTunnel.antialiasing = true;
+		redTunnel.scrollFactor.set(0.6, 0.6);
+		redTunnel.active = true;
+		redTunnel.scale.set(0.01, 0.01);
+		redTunnel.updateHitbox();
+		insert(position, redTunnel);
+	}
+
 	function resetLimoKill():Void
 	{
 		if(curStage == 'limo') {
@@ -5827,6 +5867,7 @@ class PlayState extends MusicBeatState
 						devaExpunged.active = true;
 						curbg = devaExpunged;
 						if(ClientPrefs.flashing) FlxG.camera.flash(FlxColor.BLACK, 3);
+						spawnRedTunnel();
 				}
 		}
 

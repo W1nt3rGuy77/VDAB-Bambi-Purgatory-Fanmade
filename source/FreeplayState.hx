@@ -163,6 +163,7 @@ class FreeplayState extends MusicBeatState
 					addWeek(['Beefin'], 12, ['bamburg']);
 					addWeek(['Technology'], 9, ['bombu']);
 					addWeek(['Devastation'], 12, ['devastation']);
+					addWeek(['Antagonism'], 10, ['dataexpunged']);
 					#if !debug
 					if(FlxG.save.data.oppositionFound)
 					#end

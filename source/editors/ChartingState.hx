@@ -79,7 +79,10 @@ class ChartingState extends MusicBeatState
 		['Camera Follow Pos', "Value 1: X\nValue 2: Y\n\nThe camera won't change the follow point\nafter using this, for getting it back\nto normal, leave both values blank."],
 		['Alt Idle Animation', "Sets a speciied suffix after the idle animation name.\nYou can use this to trigger 'idle-alt' if you set\nValue 2 to -alt\n\nValue 1: Character to set (Dad, BF or GF)\nValue 2: New suffix (Leave it blank to disable)"],
 		['Screen Shake', "Value 1: Camera shake\nValue 2: HUD shake\n\nEvery value works as the following example: \"1, 0.05\".\nThe first number (1) is the duration.\nThe second number (0.05) is the intensity."],
-		['Change Character', "Value 1: Character to change (Dad, BF, GF)\nValue 2: New character's name"]
+		['Change Character', "Value 1: Character to change (Dad, BF, GF)\nValue 2: New character's name"],
+		['Spawn RedTunnel', "Makes Expunged's Red Tunnel appear.\nNOTE: This is only used as a\nworkaround for BPM changes."],
+		['Spawn Alt Character', "Value 1: Dad2 or Dad3\nValue 2: Name of the new character\nNOTE: This is only used as a\nworkaround for BPM changes."],
+		['Remove Alt Character', "Value 1: Dad2 or Dad3\nNOTE: This is only used as a\nworkaround for BPM changes."]
 	];
 
 	var _file:FileReference;
