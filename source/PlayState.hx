@@ -390,7 +390,7 @@ class PlayState extends MusicBeatState
 		Conductor.mapBPMChanges(SONG);
 		Conductor.changeBPM(SONG.bpm);
 
-		whiteflash = new FlxSprite(-100, -100).makeGraphic(Std.int(FlxG.width * 100), Std.int(FlxG.height * 100), FlxColor.WHITE);
+		whiteflash = new FlxSprite(-400, -400).makeGraphic(Std.int(FlxG.width * 100), Std.int(FlxG.height * 100), FlxColor.WHITE);
 		whiteflash.scrollFactor.set();
 
 		blackScreen = new FlxSprite(-120, -120).makeGraphic(Std.int(FlxG.width * 100), Std.int(FlxG.height * 150), FlxColor.BLACK);
@@ -768,6 +768,9 @@ class PlayState extends MusicBeatState
 
 				var bg:BGSprite = new BGSprite('bambi/purgatory/graysky', -600, -200, 0.2, 0.2);
 				add(bg);
+
+				var grid:BGSprite = new BGSprite('bambi/purgatory/Grid_BG', -600, -200, 0.2, 0.2);
+				add(grid);
 	
 				var bgshit:BGSprite = new BGSprite('bambi/purgatory/3d_Objects', -600, -200, 0.7, 0.7);
 				bgshit.setGraphicSize(Std.int(bgshit.width * 1.25));
@@ -5868,6 +5871,12 @@ class PlayState extends MusicBeatState
 						curbg = devaExpunged;
 						if(ClientPrefs.flashing) FlxG.camera.flash(FlxColor.BLACK, 3);
 						spawnRedTunnel();
+				}
+			case 'antagonism':
+				switch(curStep)
+				{
+					case 256:
+						FlxG.camera.flash(FlxColor.WHITE, 60/250*2);
 				}
 		}
 
