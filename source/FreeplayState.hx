@@ -66,7 +66,8 @@ class FreeplayState extends MusicBeatState
 		0xFF420000, // purgatory stuff
 		0xFFFFFFFF, // purgatory stuff
 		0xFFFEC615, // mrbeast burger
-		0xFFBC13FE // poip!!
+		0xFFBC13FE, // poip!!
+		0xFF4965FF // DAVE but purgatory
     ];
 
 	private var iconArray:Array<HealthIcon> = [];
@@ -160,6 +161,7 @@ class FreeplayState extends MusicBeatState
 					addWeek(['Supplanted'], 7, ['bambiRage']);
 					addWeek(['Reality-Breaking'], 11, ['bambiGod2d']);
 					addWeek(['Disposition'], 11, ['bambiGod']);
+					addWeek(['Roundabout'], 14, ['dave']);
 					addWeek(['Beefin'], 12, ['bamburg']);
 					addWeek(['Technology'], 9, ['bombu']);
 					addWeek(['Devastation'], 12, ['devastation']);
