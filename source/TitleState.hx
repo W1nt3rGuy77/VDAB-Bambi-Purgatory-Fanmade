@@ -176,7 +176,7 @@ class TitleState extends MusicBeatState
 			}
 		}
 
-		Conductor.changeBPM(270);
+		Conductor.changeBPM(90);
 		persistentUpdate = true;
 
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
@@ -422,13 +422,14 @@ class TitleState extends MusicBeatState
 			switch (curBeat)
 			{
 				case 1:
-					createCoolText(['how do you see this']);
-						//createCoolText(['Psych Engine by']);
+					createCoolText(['Fanmade Purgatory by']);
+					//createCoolText(['Psych Engine by']);
 					// credTextShit.visible = true;
 				case 2:
-					createCoolText([' '], 45);
+					addMoreText('TerribleAtCreating', 45);
 				// credTextShit.visible = true;
 				case 3:
+					deleteCoolText();
 					addMoreText('Psych Engine By\nShadow Mario\nRiverOaken\nbb-panzu', 45);
 				// credTextShit.text += '\npresent...';
 				// credTextShit.addText();
@@ -439,8 +440,9 @@ class TitleState extends MusicBeatState
 				// credTextShit.screenCenter();
 				case 5:
 					createCoolText(['A fan tweak of\nThis mod down below'], -60);
-					logoSpr.visible = true;
 				case 7:
+					logoSpr.visible = true;
+				case 8:
 					deleteCoolText();
 					logoSpr.visible = false;
 				// credTextShit.visible = false;
@@ -449,45 +451,47 @@ class TitleState extends MusicBeatState
 				// credTextShit.screenCenter();
 				//createCoolText(['MoldyGH', 'Rapparep', 'Krisspo', 'TheBuilderXD']);
 			// credTextShit.visible = true;
-			case 8:
-				createCoolText(['VS Dave and Bambi by'], -60);
 			case 9:
-				addMoreText('MoldyGH, MissingTextureMan101', -60);
+				createCoolText(['VS Dave and Bambi by'], -60);
 			case 10:
+				addMoreText('MoldyGH, MissingTextureMan101', -60);
 				addMoreText('rapparep lol, TheBuilderXD', -60);
 			case 11:
+				addMoreText('rapparep lol, TheBuilderXD', -60);
 				addMoreText('T5mpler, Erizur, Billy Bobbo', -60);
-			case 12:
 				addMoreText('Cuszie, Marcello_TIMEnice30', -60);
+			case 12:
+				deleteCoolText();
 			case 13:
-				deleteCoolText();
-			case 14:
 				createCoolText(['VDAB Definitive Edition', 'and Bambis Purgatory', 'by']);
-			case 15:
+			case 14:
 				addMoreText('WhatsDown, ztgds, Voidsslime');
-			case 16:
+			case 15:
 				addMoreText('Grantare, rapparep lol, and More!\nAnd Special thanks to our contributors!');
-			case 17:
+			case 16:
 				deleteCoolText();
-			case 18:
+			case 17:
 				createCoolText(['Supernovae', 'by']);
-			case 19:
+			case 18:
 				addMoreText('ArchWk');
 			case 20:
 				deleteCoolText();
 			case 21:
 				createCoolText([curWacky[0]]);
-			case 22:
-				addMoreText(curWacky[1]);
 			case 23:
-				deleteCoolText();
+				addMoreText(curWacky[1]);
 			case 24:
-				addMoreText('VS Dave');
+				deleteCoolText();
 			case 25:
-				addMoreText('& Bambi');
+				addMoreText('Fanmade');
 			case 26:
-				addMoreText('Definitive Edition + Bambis Purgatory'); 
+				deleteCoolText();
+				addMoreText('Fanmade Purgatory');
 			case 27:
+				addMoreText('(unofficial)'); 
+			case 28:
+				deleteCoolText();
+			case 29:
 				skipIntro();
 			}
 		}
@@ -499,7 +503,7 @@ class TitleState extends MusicBeatState
 	{
 		if (!skippedIntro)
 		{
-			Conductor.changeBPM(150);
+			Conductor.changeBPM(90);
 
 			remove(logoSpr);
 

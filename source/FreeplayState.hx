@@ -160,12 +160,9 @@ class FreeplayState extends MusicBeatState
 				case 'purgatory':
 					addWeek(['Supplanted'], 7, ['bambiRage']);
 					addWeek(['Reality-Breaking'], 11, ['bambiGod2d']);
-					addWeek(['Disposition'], 11, ['bambiGod']);
-					addWeek(['Roundabout'], 14, ['dave']);
 					addWeek(['Beefin'], 12, ['bamburg']);
 					addWeek(['Technology'], 9, ['bombu']);
 					addWeek(['Devastation'], 12, ['devastation']);
-					addWeek(['Antagonism'], 10, ['dataexpunged']);
 					#if !debug
 					if(FlxG.save.data.oppositionFound)
 					#end

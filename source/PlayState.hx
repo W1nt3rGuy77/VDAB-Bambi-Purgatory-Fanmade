@@ -1801,7 +1801,9 @@ class PlayState extends MusicBeatState
 			case 'secret':
 				credits = 'you are shit';
 			case 'devastation':
-				credits = 'Song made by Hortas, Pyramix and ShredBoi!';
+				credits = 'Song made by Hortas and Pyramix!';
+			case 'old-antagonism':
+				credits = 'May be taken down.';
 			case 'DATA_EXPUNGED_(HAXELIB_ERROR)':
 				credits = "????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????"; 
 			default:
@@ -3548,11 +3550,15 @@ class PlayState extends MusicBeatState
 						FlxG.switchState(new PlayState());
 						return;
 					case 'opposition':
+						#if debug
+						MusicBeatState.switchState(new ChartingState());
+						#end
+						PlayState.SONG = Song.loadFromJson("antagonism-hard", "old-antagonism"); // YOOOOOOO still here.
 						shakeCam = false;
 						#if windows
 						screenshader.Enabled = false;
 						#end
-						FlxG.switchState(new SusState());
+						FlxG.switchState(new PlayState());
 						return;
 					case 'unfairness':
 						shakeCam = false;
@@ -3976,11 +3982,11 @@ class PlayState extends MusicBeatState
 							gf.playAnim(animToPlay + altAnim, true);
 							gf.holdTimer = 0;
 						}
-						if(daNote.noteType == 'Dad2') {
+						if(daNote.noteType == 'Dad2' && dad2 != null) {
 							dad2.playAnim(animToPlay + altAnim, true);
 							dad2.holdTimer = 0;
 						}
-						if(daNote.noteType == 'Dad3') {
+						if(daNote.noteType == 'Dad3' && dad3 != null) {
 							dad2.playAnim(animToPlay + altAnim, true);
 							dad2.holdTimer = 0;
 						} 
@@ -4406,7 +4412,7 @@ class PlayState extends MusicBeatState
 						startCharacterPos(dad2, true);
 						add(dad2);
 					case 'Dad3':
-						dad3 = new Character(-250, 0, value2);
+						dad3 = new Character(-250, -100, value2);
 						startCharacterPos(dad3, true);
 						add(dad3);
 				}
@@ -5872,7 +5878,7 @@ class PlayState extends MusicBeatState
 						if(ClientPrefs.flashing) FlxG.camera.flash(FlxColor.BLACK, 3);
 						spawnRedTunnel();
 				}
-			case 'antagonism':
+			case 'old-antagonism':
 				switch(curStep)
 				{
 					case 256:
